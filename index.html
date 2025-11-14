@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Moaz Morgan — ultra-premium fashion experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Moaz Morgan — Fashion Influence</title>
+  </head>
+  <body>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="indicator-line"></div>
+    </div>
+
+    <header class="hero" data-parallax>
+      <video class="hero-media" src="media/1.mp4" autoplay muted loop playsinline></video>
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>MOAZ MORGAN</h1>
+          <p class="hero-subtitle">Fashion Influencer — 9M+ Followers</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section about">
+        <div class="section-content">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title fade-up">A life shot in gold.</h2>
+          <p class="about-copy fade-up">
+            From Paris couture weeks to midnight fittings in Dubai, Moaz archives every client story with obsessive detail. Brands book him to sell desire; audiences follow to live inside it. This collection is your pass into the quiet luxury economy he curates for nine million loyal buyers.
+          </p>
+          <div class="about-gallery">
+
+            <div class="about-image reveal-right" data-scroll-speed="0.08">
+              <img src="media/5.jpg" alt="Runway look" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery">
+        <div class="section-content gallery-shell">
+          <header class="gallery-header fade-up">
+            <p class="eyebrow">Gallery</p>
+            <h2 class="section-title">Proof of influence. Proof of conversion.</h2>
+            <div class="gallery-intro">
+              Photos stack with the exact sticky scroll you referenced—one frame anchors, the next slides from the other side for a fast cinematic pass.
+            </div>
+          </header>
+          <div class="gallery-stack" id="gallery-stack" aria-live="polite"></div>
+          <div class="gallery-spacer" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="shop" class="section shop">
+        <video class="shop-bg" src="media/2.mp4" autoplay muted loop playsinline></video>
+        <div class="section-content">
+          <p class="eyebrow">PDF Shop</p>
+          <h2 class="section-title">Digital dossier — private drops</h2>
+          <p class="shop-copy">
+            The dossier unlocks strategy decks, pricing frameworks, and launch scripts used to move millions in luxury inventory. Enter your best email, complete the encrypted payment, and receive the PDF within minutes—ready to plug into your next campaign.
+          </p>
+          <form id="pdf-shop-form" novalidate>
+            <label for="client-email" class="sr-only">Email</label>
+            <input type="email" id="client-email" name="client-email" placeholder="Email" autocomplete="email" required />
+          </form>
+          <div class="paypal-wrapper" aria-live="polite">
+            <div id="paypal-button-container" class="paypal-button"></div>
+            <p class="payment-status" id="payment-status" role="status" aria-live="assertive"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="section-content">
+          <p class="eyebrow">Connect</p>
+          <h2 class="section-title">Stay within the circle.</h2>
+          <p class="contact-copy">
+            Campaign bookings, co-branded drops, or private styling residencies—tap below and the team responds within hours.
+          </p>
+          <div class="contact-links">
+            <a href="#" class="contact-link" aria-label="Instagram">Instagram</a>
+            <a href="#" class="contact-link" aria-label="TikTok">TikTok</a>
+            <a href="mailto:contact@placeholder.com" class="contact-link" aria-label="Email">Email</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close gallery modal">×</button>
+      <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
+    <script type="application/json" id="gallery-config">
+      {
+        "photos": [
+          "media/1.jpg",
+          "media/2.jpg",
+          "media/3.jpg",
+          "media/4.jpg",
+          "media/5.jpg",
+          "media/6.jpg",
+          "media/7.jpg",
+          "media/8.jpg",
+          "media/9.jpg",
+          "media/10.jpg",
+          "media/11.jpg",
+          "media/12.jpg"
+        ],
+        "videos": [
+          "media/2.mp4",
+          "media/3.mp4"
+        ]
+      }
+    </script>
+
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=PAYPAL_CLIENT_ID&currency=EUR&intent=capture"
+      data-sdk-integration-source="button-factory"
+      defer
+    ></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/scroll.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/payment.js" defer></script>
+  </body>
+</html>
