@@ -197,7 +197,10 @@ main {
 }
 
 .gallery {
+  --gallery-stick-offset: 10vh;
+  --gallery-card-height: min(90vh, 720px);
   padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: calc(var(--gallery-card-height) + var(--gallery-stick-offset) + clamp(4rem, 6vw, 5rem));
 }
 
 .gallery-shell {
@@ -231,19 +234,41 @@ main {
 }
 
 .gallery-card {
-  --card-height: min(90vh, 720px);
-  --stick-offset: 10vh;
-  --card-half: calc(var(--card-height) / 2);
   position: sticky;
-  top: var(--stick-offset);
-  height: var(--card-height);
-  min-height: var(--card-height);
+  top: var(--gallery-stick-offset);
+  height: var(--gallery-card-height);
+  min-height: var(--gallery-card-height);
   background: rgba(0, 0, 0, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
   margin-top: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: calc(-1 * (var(--card-height) - var(--stick-offset)) + clamp(4rem, 8vw, 6rem));
+  margin-bottom: calc(var(--gallery-card-height) + clamp(3rem, 6vw, 5rem));
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.gallery-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    --gallery-stick-offset: clamp(6vh, 10vh, 12vh);
+    --gallery-card-height: calc(100vh - (2 * var(--gallery-stick-offset)));
+    padding-bottom: calc(var(--gallery-card-height) + var(--gallery-stick-offset) + clamp(6rem, 9vw, 10rem));
+  }
+
+  .gallery-card {
+    margin-bottom: calc(var(--gallery-card-height) + clamp(4rem, 8vw, 6rem));
+  }
+
+  .gallery-spacer {
+    height: calc(var(--gallery-stick-offset) + 6rem);
+  }
 }
 
 .gallery-card figure {
