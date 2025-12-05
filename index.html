@@ -66,15 +66,22 @@
           <p class="eyebrow">PDF Shop</p>
           <h2 class="section-title">Digital dossier — private drops</h2>
           <p class="shop-copy">
-            The dossier unlocks strategy decks, pricing frameworks, and launch scripts used to move millions in luxury inventory. Enter your best email, complete the encrypted payment, and receive the PDF within minutes—ready to plug into your next campaign.
+            The dossier unlocks strategy decks, pricing frameworks, and launch scripts used to move millions in luxury inventory. Complete the encrypted payment and receive the PDF within minutes—ready to plug into your next campaign.
           </p>
-          <form id="pdf-shop-form" novalidate>
-            <label for="client-email" class="sr-only">Email</label>
-            <input type="email" id="client-email" name="client-email" placeholder="Email" autocomplete="email" required />
-          </form>
-          <div class="paypal-wrapper" aria-live="polite">
-            <div id="paypal-button-container" class="paypal-button"></div>
+          <div class="payhip-wrapper" aria-live="polite">
+            <a
+              id="payhip-button"
+              data-payhip-button="true"
+              href="https://payhip.com/b/8Wi9p"
+              class="payhip-button"
+              role="button"
+            >
+              <span>Get the Course</span>
+            </a>
             <p class="payment-status" id="payment-status" role="status" aria-live="assertive"></p>
+            <div class="success-message" id="success-message" aria-live="polite" aria-hidden="true">
+              Thank you for your purchase!
+            </div>
           </div>
         </div>
       </section>
@@ -103,16 +110,16 @@
     <script type="application/json" id="gallery-config">
       {
         "photos": [
-          "media/1.jpg",
+        "media/11.jpg",
+        "media/7.jpg",
+        "media/9.jpg",
+        "media/1.jpg",
           "media/2.jpg",
           "media/8.jpg",
           "media/4.jpg",
           "media/6.jpg",
-          "media/7.jpg",
           "media/3.jpg",
-          "media/9.jpg",
           "media/10.jpg",
-          "media/11.jpg",
           "media/12.jpg"
         ],
         "videos": [
@@ -122,14 +129,10 @@
       }
     </script>
 
-    <script
-      src="https://www.paypal.com/sdk/js?client-id=PAYPAL_CLIENT_ID&currency=EUR&intent=capture"
-      data-sdk-integration-source="button-factory"
-      defer
-    ></script>
+    <script src="https://payhip.com/payhip.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/scroll.js" defer></script>
     <script src="js/gallery.js" defer></script>
-    <script src="js/payment.js" defer></script>
+    <script src="js/payhip.js" defer></script>
   </body>
 </html>
